@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import NumberFormat from 'react-number-format';
+import {NumericFormat} from 'react-number-format';
 import InputMask from 'react-input-mask';
 import classNames from 'classnames';
 import Portal from '../../../layout/Portal/Portal';
@@ -68,7 +68,7 @@ format,
     if (component === 'NumberFormat' || format) {
         return (<>
 					{/* eslint-disable-next-line react/jsx-props-no-spreading */} {/* @ts-ignore */}
-					<NumberFormat ref={ref} {...PROPS} {...NUMBER_FORMAT_PROPS}/>
+					<NumericFormat ref={ref} {...PROPS} {...NUMBER_FORMAT_PROPS}/>
 					{LIST}
 					{VALIDATION}
 				</>);
