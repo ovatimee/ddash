@@ -1,16 +1,13 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import classNames from "classnames";
-import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import Brand from "../Brand/Brand";
 import Navigation, { NavigationLine } from "../Navigation/Navigation";
 import User from "../User/User";
 import { dashboardMenu, demoPages, layoutMenu } from "../../menu";
 import ThemeContext from "../../contexts/themeContext";
-import Icon from "../../components/icon/Icon";
-import Tooltips from "../../components/bootstrap/Tooltips";
-import useAsideTouch from "../../hooks/useAsideTouch";
-import Popovers from "../../components/bootstrap/Popovers";
+// import Icon from "../../components/icon/Icon";
+// import Popovers from "../../components/bootstrap/Popovers";
 const Aside = () => {
   const { asideStatus, setAsideStatus } = useContext(ThemeContext);
   // const { asideStyle, touchStatus, hasTouchButton, asideWidthWithSpace, x } = useAsideTouch();
@@ -48,12 +45,12 @@ const Aside = () => {
                     <span className="navigation-link navigation-link-pill">
                       <span className="navigation-link-info">
                         <span className="navigation-text">
-                          <Popovers
-                            title="Aside.tsx"
-                            desc={<code>src/layout/Aside/Aside.tsx</code>}
-                          >
-                            Aside
-                          </Popovers>
+                          {/* <Popovers */}
+                          {/*   title="Aside.tsx" */}
+                          {/*   desc={<code>src/layout/Aside/Aside.tsx</code>} */}
+                          {/* > */}
+                          {/*   Aside */}
+                          {/* </Popovers> */}
                         </span>
                       </span>
                     </span>
@@ -78,24 +75,24 @@ const Aside = () => {
               >
                 <span className="navigation-link navigation-link-pill">
                   <span className="navigation-link-info">
-                    <Icon
-                      icon={doc ? "ToggleOn" : "ToggleOff"}
-                      color={doc ? "success" : undefined}
-                      className="navigation-icon"
-                    />
+                    {/* <Icon */}
+                    {/*   icon={doc ? "ToggleOn" : "ToggleOff"} */}
+                    {/*   color={doc ? "success" : undefined} */}
+                    {/*   className="navigation-icon" */}
+                    {/* /> */}
                     <span className="navigation-text">
                       {t("menu:Documentation")}
                     </span>
                   </span>
                   <span className="navigation-link-extra">
-                    <Icon
-                      icon="Circle"
-                      className={classNames(
-                        "navigation-notification",
-                        "text-success",
-                        "animate__animated animate__heartBeat animate__infinite animate__slower"
-                      )}
-                    />
+                    {/* <Icon */}
+                    {/*   icon="Circle" */}
+                    {/*   className={classNames( */}
+                    {/*     "navigation-notification", */}
+                    {/*     "text-success", */}
+                    {/*     "animate__animated animate__heartBeat animate__infinite animate__slower" */}
+                    {/*   )} */}
+                    {/* /> */}
                   </span>
                 </span>
               </div>

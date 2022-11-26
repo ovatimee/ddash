@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import PageWrapper from "../../../layout/PageWrapper/PageWrapper";
 import Page from "../../../layout/Page/Page";
-import Card, { CardBody } from "../../../components/bootstrap/Card";
-import FormGroup from "../../../components/bootstrap/forms/FormGroup";
-import Input from "../../../components/bootstrap/forms/Input";
-import Button from "../../../components/bootstrap/Button";
+// import div ,{ CardBody } from "bootstrap";
+// import {label} from "bootstrap";
+// import input from "../../../components/bootstrap/forms/Input";
+// import button from "../../../components/bootstrap/Button";
 import Logo from "../../../components/Logo";
 import useDarkMode from "../../../hooks/useDarkMode";
 import { useFormik } from "formik";
@@ -15,8 +15,8 @@ import AuthContext from "../../../contexts/authContext";
 import USERS, {
   getUserDataWithUsername,
 } from "../../../common/data/userDummyData";
-import Spinner from "../../../components/bootstrap/Spinner";
-import Alert from "../../../components/bootstrap/Alert";
+// import Spinner from "../../../components/bootstrap/Spinner";
+// import Alert from "../../../components/bootstrap/Alert";
 const LoginHeader = ({ isNewUser }) => {
   if (isNewUser) {
     return (
@@ -112,8 +112,8 @@ const Login = ({ isSignUp }) => {
       <Page className="p-0">
         <div className="row h-100 align-items-center justify-content-center">
           <div className="col-xl-4 col-lg-6 col-md-8 shadow-3d-container">
-            <Card className="shadow-3d-dark" data-tour="login-page">
-              <CardBody>
+            <div className="shadow-3d-dark" data-tour="login-page">
+              <divBody>
                 <div className="text-center my-5">
                   <Link
                     to="/"
@@ -136,7 +136,7 @@ const Login = ({ isSignUp }) => {
                 >
                   <div className="row row-cols-2 g-3 pb-3 px-3 mt-0">
                     <div className="col">
-                      <Button
+                      <button
                         color={darkModeStatus ? "light" : "dark"}
                         isLight={singUpStatus}
                         className="rounded-1 w-100"
@@ -147,10 +147,10 @@ const Login = ({ isSignUp }) => {
                         }}
                       >
                         Login
-                      </Button>
+                      </button>
                     </div>
                     <div className="col">
-                      <Button
+                      <button
                         color={darkModeStatus ? "light" : "dark"}
                         isLight={!singUpStatus}
                         className="rounded-1 w-100"
@@ -161,76 +161,76 @@ const Login = ({ isSignUp }) => {
                         }}
                       >
                         Sign Up
-                      </Button>
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <LoginHeader isNewUser={singUpStatus} />
 
-                <Alert isLight icon="Lock" isDismissible>
-                  <div className="row">
-                    <div className="col-12">
-                      <strong>Username:</strong> {USERS.JOHN.username}
-                    </div>
-                    <div className="col-12">
-                      <strong>Password:</strong> {USERS.JOHN.password}
-                    </div>
-                  </div>
-                </Alert>
+                {/* <Alert isLight icon="Lock" isDismissible> */}
+                {/*   <div className="row"> */}
+                {/*     <div className="col-12"> */}
+                {/*       <strong>Username:</strong> {USERS.JOHN.username} */}
+                {/*     </div> */}
+                {/*     <div className="col-12"> */}
+                {/*       <strong>Password:</strong> {USERS.JOHN.password} */}
+                {/*     </div> */}
+                {/*   </div> */}
+                {/* </Alert> */}
                 <form className="row g-4">
                   {singUpStatus ? (
                     <>
                       <div className="col-12">
-                        <FormGroup
+                        <label
                           id="signup-email"
                           isFloating
                           label="Your email"
                         >
-                          <Input type="email" autoComplete="email" />
-                        </FormGroup>
+                          <input type="email" autoComplete="email" />
+                        </label>
                       </div>
                       <div className="col-12">
-                        <FormGroup
+                        <label
                           id="signup-name"
                           isFloating
                           label="Your name"
                         >
-                          <Input autoComplete="given-name" />
-                        </FormGroup>
+                          <input autoComplete="given-name" />
+                        </label>
                       </div>
                       <div className="col-12">
-                        <FormGroup
+                        <label
                           id="signup-surname"
                           isFloating
                           label="Your surname"
                         >
-                          <Input autoComplete="family-name" />
-                        </FormGroup>
+                          <input autoComplete="family-name" />
+                        </label>
                       </div>
                       <div className="col-12">
-                        <FormGroup
+                        <label
                           id="signup-password"
                           isFloating
                           label="Password"
                         >
-                          <Input type="password" autoComplete="password" />
-                        </FormGroup>
+                          <input type="password" autoComplete="password" />
+                        </label>
                       </div>
                       <div className="col-12">
-                        <Button
+                        <button
                           color="info"
                           className="w-100 py-3"
                           onClick={handleOnClick}
                         >
                           Sign Up
-                        </Button>
+                        </button>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="col-12">
-                        <FormGroup
+                        <label
                           id="loginUsername"
                           isFloating
                           label="Your email or username"
@@ -238,7 +238,7 @@ const Login = ({ isSignUp }) => {
                             "d-none": signInPassword,
                           })}
                         >
-                          <Input
+                          <input
                             autoComplete="username"
                             value={formik.values.loginUsername}
                             isTouched={formik.touched.loginUsername}
@@ -250,13 +250,13 @@ const Login = ({ isSignUp }) => {
                               formik.setErrors({});
                             }}
                           />
-                        </FormGroup>
+                        </label>
                         {signInPassword && (
                           <div className="text-center h4 mb-3 fw-bold">
                             Hi, {formik.values.loginUsername}.
                           </div>
                         )}
-                        <FormGroup
+                        <label
                           id="loginPassword"
                           isFloating
                           label="Password"
@@ -264,7 +264,7 @@ const Login = ({ isSignUp }) => {
                             "d-none": !signInPassword,
                           })}
                         >
-                          <Input
+                          <input
                             type="password"
                             autoComplete="current-password"
                             value={formik.values.loginPassword}
@@ -275,27 +275,29 @@ const Login = ({ isSignUp }) => {
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                           />
-                        </FormGroup>
+                        </label>
                       </div>
                       <div className="col-12">
                         {!signInPassword ? (
-                          <Button
+                          <button
                             color="warning"
                             className="w-100 py-3"
                             isDisable={!formik.values.loginUsername}
                             onClick={handleContinue}
                           >
-                            {isLoading && <Spinner isSmall inButton isGrow />}
+                            {isLoading && 
+                                {/* <Spinner isSmall inbutton isGrow /> */}
+                            }
                             Continue
-                          </Button>
+                          </button>
                         ) : (
-                          <Button
+                          <button
                             color="warning"
                             className="w-100 py-3"
                             onClick={formik.handleSubmit}
                           >
                             Login
-                          </Button>
+                          </button>
                         )}
                       </div>
                     </>
@@ -308,7 +310,7 @@ const Login = ({ isSignUp }) => {
                         OR
                       </div>
                       <div className="col-12 mt-3">
-                        <Button
+                        <button
                           isOutline
                           color={darkModeStatus ? "light" : "dark"}
                           className={classNames("w-100 py-3", {
@@ -319,10 +321,10 @@ const Login = ({ isSignUp }) => {
                           onClick={handleOnClick}
                         >
                           Sign in with Apple
-                        </Button>
+                        </button>
                       </div>
                       <div className="col-12">
-                        <Button
+                        <button
                           isOutline
                           color={darkModeStatus ? "light" : "dark"}
                           className={classNames("w-100 py-3", {
@@ -333,14 +335,14 @@ const Login = ({ isSignUp }) => {
                           onClick={handleOnClick}
                         >
                           Continue with Google
-                        </Button>
+                        </button>
                       </div>
                     </>
                   )}
                   {/* END :: Social Login */}
                 </form>
-              </CardBody>
-            </Card>
+              </divBody>
+            </div>
             <div className="text-center">
               <a
                 href="/"

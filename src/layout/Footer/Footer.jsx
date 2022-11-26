@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMeasure } from 'react-use';
-import Popovers from '../../components/bootstrap/Popovers';
+// import Popovers from '../../components/bootstrap/Popovers';
 const Footer = () => {
     const [ref, { height }] = useMeasure();
     const root = document.documentElement;
@@ -9,15 +9,15 @@ const Footer = () => {
 			<div className='container-fluid'>
 				<div className='row'>
 					<div className='col'>
-						<Popovers title='Footer.tsx' desc={<code>src/layout/Footer/Footer.tsx</code>}>
-							Footer
-						</Popovers>
+						{/* <Popovers title='Footer.tsx' desc={<code>src/layout/Footer/Footer.tsx</code>}> */}
+						{/* 	Footer */}
+						{/* </Popovers> */}
 						<code className='ps-3'>Footer.tsx</code>
 					</div>
 					<div className='col-auto'>
-						<Popovers title='Footer.tsx' desc={<code>src/layout/Footer/Footer.tsx</code>}>
-							Footer
-						</Popovers>
+						{/* <Popovers title='Footer.tsx' desc={<code>src/layout/Footer/Footer.tsx</code>}> */}
+						{/* 	Footer */}
+						{/* </Popovers> */}
 						<code className='ps-3'>Footer.tsx</code>
 					</div>
 				</div>

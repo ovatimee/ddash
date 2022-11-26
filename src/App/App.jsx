@@ -3,18 +3,14 @@ import { ThemeProvider } from "react-jss";
 import { ReactNotifications } from "react-notifications-component";
 import { useFullscreen } from "react-use";
 import { Route, Routes } from "react-router-dom";
-// import { ToastProvider } from "react-toast-notifications";
-import { TourProvider } from "@reactour/tour";
 import ThemeContext from "../contexts/themeContext";
 import Aside from "../layout/Aside/Aside";
 import Wrapper from "../layout/Wrapper/Wrapper";
 import Portal from "../layout/Portal/Portal";
 import { demoPages, layoutMenu } from "../menu";
-import { Toast, ToastContainer } from "../components/bootstrap/Toasts";
 import useDarkMode from "../hooks/useDarkMode";
 import COLORS from "../common/data/enumColors";
-import { getOS } from "../helpers/helpers";
-import steps, { styles } from "../steps";
+// import steps, { styles } from "../steps";
 const App = () => {
   // getOS();
   /**
@@ -67,13 +63,6 @@ const App = () => {
   ];
   return (
     <ThemeProvider theme={theme}>
-      {/* <ToastProvider components={{ ToastContainer, Toast }}> */}
-        <TourProvider
-          steps={steps}
-          styles={styles}
-          showNavigation={false}
-          showBadge={false}
-        >
           <div
             ref={ref}
             className="app"
@@ -96,8 +85,6 @@ const App = () => {
           <Portal id="portal-notification">
             <ReactNotifications />
           </Portal>
-        </TourProvider>
-      {/* </ToastProvider> */}
     </ThemeProvider>
   );
 };

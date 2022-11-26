@@ -14,9 +14,9 @@ import { Manager, Popper, Reference } from "react-popper";
 // @ts-ignore
 import useEventOutside from "@omtanke/react-use-event-outside";
 import { useTranslation } from "react-i18next";
-import Icon from "../../components/icon/Icon";
+import { BeakerIcon } from '@heroicons/react/24/solid'
 import ThemeContext from "../../contexts/themeContext";
-import Collapse from "../../components/bootstrap/Collapse";
+// import { Collapse } from "bootstrap";
 import useDarkMode from "../../hooks/useDarkMode";
 export const List = forwardRef(
   (
@@ -121,26 +121,18 @@ export const Item = ({
   const INNER = (
     <>
       <span className="navigation-link-info">
-        {icon && <Icon className="navigation-icon" icon={icon} />}
+        {icon && 
+          <BeakerIcon />
+      }
         {title && <span className="navigation-text">{t(title)}</span>}
       </span>
       {(!!children || !!notification) && (
         <span className="navigation-link-extra">
           {!!notification && (
-            <Icon
-              icon="Circle"
-              className={classNames(
-                "navigation-notification",
-                {
-                  [`text-${notification}`]: typeof notification === "string",
-                  "text-danger": typeof notification !== "string",
-                },
-                "animate__animated animate__heartBeat animate__infinite animate__slower"
-              )}
-            />
+            <BeakerIcon />
           )}
           {!!children && (
-            <Icon className="navigation-arrow" icon="ChevronRight" />
+            <BeakerIcon />
           )}
         </span>
       )}
@@ -218,42 +210,6 @@ export const Item = ({
                 </span>
               )}
             </Reference>
-            {dropdownStatus && (
-              <Popper
-                placement="bottom-start"
-                modifiers={[
-                  {
-                    name: "flip",
-                    options: {
-                      fallbackPlacements: [`bottom-end`, `bottom-start`],
-                    },
-                  },
-                ]}
-              >
-                {({ ref, style, placement }) => (
-                  <List
-                    // @ts-ignore
-                    ref={(node) => setListRef(node, ref)}
-                    style={style}
-                    data-placement={placement}
-                    id={`${rootId}__${id}`}
-                    className={classNames(
-                      "dropdown-menu",
-                      {
-                        "dropdown-menu-dark": darkModeStatus,
-                      },
-                      "show"
-                    )}
-                    ariaLabelledby={`${rootId}__${id}--link`}
-                    rootId={rootId}
-                    parentId={`${rootId}__${parentId}`}
-                    onMouseLeave={() => setDropdownStatus(false)}
-                  >
-                    {children}
-                  </List>
-                )}
-              </Popper>
-            )}
           </li>
         </Manager>
       );
@@ -275,17 +231,17 @@ export const Item = ({
         >
           {INNER}
         </span>
-        <Collapse isOpen={ACTIVE} isChildClone>
-          <List
-            id={`${rootId}__${id}`}
-            ariaLabelledby={`${rootId}__${id}--link`}
-            rootId={rootId}
-            parentId={`${rootId}__${parentId}`}
-            onMouseLeave={closeMenu}
-          >
-            {children}
-          </List>
-        </Collapse>
+        {/* <Collapse isOpen={ACTIVE} isChildClone> */}
+        {/*   <List */}
+        {/*     id={`${rootId}__${id}`} */}
+        {/*     ariaLabelledby={`${rootId}__${id}--link`} */}
+        {/*     rootId={rootId} */}
+        {/*     parentId={`${rootId}__${parentId}`} */}
+        {/*     onMouseLeave={closeMenu} */}
+        {/*   > */}
+        {/*     {children} */}
+        {/*   </List> */}
+        {/* </Collapse> */}
       </li>
     );
   }

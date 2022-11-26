@@ -3,7 +3,6 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import { useMeasure, useWindowSize } from "react-use";
 import ThemeContext from "../../contexts/themeContext";
-import Button from "../../components/bootstrap/Button";
 import Portal from "../Portal/Portal";
 import useDarkMode from "../../hooks/useDarkMode";
 export const HeaderLeft = ({ children, className }) => {
@@ -74,50 +73,52 @@ const Header = ({ children, hasLeftMobileMenu, hasRightMobileMenu }) => {
       <header ref={refMobileHeader} className="mobile-header">
         <div className="container-fluid">
           <div className="row">
-            <div className="col">
-              <Button
-                aria-label="Toggle Aside"
-                className="mobile-header-toggle"
-                size="lg"
-                color={asideStatus ? "primary" : themeStatus}
-                isLight={asideStatus}
-                icon={asideStatus ? "FirstPage" : "LastPage"}
-                onClick={() => {
-                  setAsideStatus(!asideStatus);
-                  setLeftMenuStatus(false);
-                  setRightMenuStatus(false);
-                }}
-              />
-              {hasLeftMobileMenu && (
-                <Button
-                  aria-label="Toggle Left Menu"
-                  className="mobile-header-toggle"
-                  size="lg"
-                  color={leftMenuStatus ? "primary" : themeStatus}
-                  isLight={leftMenuStatus}
-                  icon={leftMenuStatus ? "MoreVert" : "MoreHoriz"}
-                  onClick={() => {
-                    setAsideStatus(false);
-                    setLeftMenuStatus(!leftMenuStatus);
-                    setRightMenuStatus(false);
-                  }}
-                />
-              )}
-            </div>
+            {/* <div className="col"> */}
+            {/*   <Button */}
+            {/*     aria-label="Toggle Aside" */}
+            {/*     className="mobile-header-toggle" */}
+            {/*     size="lg" */}
+            {/*     color={asideStatus ? "primary" : themeStatus} */}
+            {/*     isLight={asideStatus} */}
+            {/*     icon={asideStatus ? "FirstPage" : "LastPage"} */}
+            {/*     onClick={() => { */}
+            {/*       setAsideStatus(!asideStatus); */}
+            {/*       setLeftMenuStatus(false); */}
+            {/*       setRightMenuStatus(false); */}
+            {/*     }} */}
+            {/*   /> */}
+            {/*   {hasLeftMobileMenu && ( */}
+            {/*     <Button */}
+            {/*       aria-label="Toggle Left Menu" */}
+            {/*       className="mobile-header-toggle" */}
+            {/*       size="lg" */}
+            {/*       color={leftMenuStatus ? "primary" : themeStatus} */}
+            {/*       isLight={leftMenuStatus} */}
+            {/*       icon={leftMenuStatus ? "MoreVert" : "MoreHoriz"} */}
+            {/*       onClick={() => { */}
+            {/*         setAsideStatus(false); */}
+            {/*         setLeftMenuStatus(!leftMenuStatus); */}
+            {/*         setRightMenuStatus(false); */}
+            {/*       }} */}
+            {/*     /> */}
+            {/*   )} */}
+            {/* </div> */}
             {hasRightMobileMenu && (
               <div className="col-auto">
-                <Button
-                  aria-label="Toggle Right Menu"
-                  className="mobile-header-toggle"
-                  size="lg"
-                  color={rightMenuStatus ? "primary" : themeStatus}
-                  isLight={rightMenuStatus}
-                  icon={rightMenuStatus ? "Menu" : "MenuOpen"}
-                  onClick={() => {
-                    setAsideStatus(false);
-                    setLeftMenuStatus(false);
-                    setRightMenuStatus(!rightMenuStatus);
-                  }}
+                <button
+                  // aria-label="Toggle Right Menu"
+                  // className="mobile-header-toggle"
+                  // size="lg"
+                  // color={rightMenuStatus ? "primary" : themeStatus}
+                  // isLight={rightMenuStatus}
+                  // icon={rightMenuStatus ? "Menu" : "MenuOpen"}
+                  onClick={() => console.log("clicked")
+                  // () => {
+                  //   setAsideStatus(false);
+                  //   setLeftMenuStatus(false);
+                  //   setRightMenuStatus(!rightMenuStatus);
+                  // }
+                }
                 />
               </div>
             )}

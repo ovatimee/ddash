@@ -3,7 +3,7 @@ import PageWrapper from '../../../layout/PageWrapper/PageWrapper';
 import Page from '../../../layout/Page/Page';
 import Humans from '../../../assets/img/scene4.png';
 import HumansWebp from '../../../assets/img/scene4.webp';
-import Button from '../../../components/bootstrap/Button';
+// import Button from '../../../components/bootstrap/Button';
 import { demoPages } from '../../../menu';
 const Page404 = () => {
     return (<PageWrapper title={demoPages.page404.text}>
@@ -21,9 +21,9 @@ const Page404 = () => {
 						<img srcSet={HumansWebp} src={Humans} alt='Humans' style={{ height: '50vh' }}/>
 					</div>
 					<div className='col-12 d-flex flex-column justify-content-center align-items-center'>
-						<Button className='px-5 py-3' color='primary' isLight icon='HolidayVillage' tag='a' href='/'>
-							Homepage
-						</Button>
+						{/* <Button className='px-5 py-3' color='primary' isLight icon='HolidayVillage' tag='a' href='/'> */}
+						{/* 	Homepage */}
+						{/* </Button> */}
 					</div>
 				</div>
 			</Page>

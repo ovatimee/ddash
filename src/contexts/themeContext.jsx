@@ -75,7 +75,6 @@ export const ThemeContextProvider = ({ children }) => {
       rightPanel,
     ]
   );
-  console.log(rightPanel);
   return (
     <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
   );
