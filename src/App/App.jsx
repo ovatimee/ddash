@@ -49,7 +49,6 @@ const App = () => {
   useFullscreen(ref, fullScreenStatus, {
     onClose: () => setFullScreenStatus(false),
   });
-  console.log(fullScreenStatus)
   /**
    * Modern Design
    */
