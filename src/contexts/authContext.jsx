@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { getUserDataWithUsername } from '../common/data/userDummyData';
 const AuthContext = createContext({});
 export const AuthContextProvider = ({ children }) => {
-    const [user, setUser] = useState(localStorage.getItem('facit_authUsername') || '');
+    const [user, setUser] = useState(localStorage.getItem('authUsername') || '');
     const [userData, setUserData] = useState({});
     useEffect(() => {
-        localStorage.setItem('facit_authUsername', user);
+        localStorage.setItem('authUsername', user);
     }, [user]);
     useEffect(() => {
         if (user !== '') {

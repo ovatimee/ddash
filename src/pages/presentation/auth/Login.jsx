@@ -125,7 +125,7 @@ const Login = ({ isSignUp }) => {
                             alt="logo"
                           />
                           <h4 className="text-xl font-semibold mt-1 mb-12 pb-1">
-                            We are The Lotus Team
+                            Managment Dashboard
                           </h4>
                         </div>
                         <form>

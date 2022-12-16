@@ -13,25 +13,25 @@ export const ThemeContextProvider = ({ children }) => {
   const mobileDesign =
     deviceScreen?.width <= process.env.REACT_APP_MOBILE_BREAKPOINT_SIZE;
   const [darkModeStatus, setDarkModeStatus] = useState(
-    localStorage.getItem("facit_darkModeStatus")
-      ? localStorage.getItem("facit_darkModeStatus") === "true"
+    localStorage.getItem("darkModeStatus")
+      ? localStorage.getItem("darkModeStatus") === "true"
       : process.env.REACT_APP_DARK_MODE === "true"
   );
   useLayoutEffect(() => {
-    localStorage.setItem("facit_darkModeStatus", darkModeStatus.toString());
+    localStorage.setItem("darkModeStatus", darkModeStatus.toString());
   }, [darkModeStatus]);
   const [fullScreenStatus, setFullScreenStatus] = useState(false);
   const [leftMenuStatus, setLeftMenuStatus] = useState(false);
   const [rightMenuStatus, setRightMenuStatus] = useState(false);
   const [asideStatus, setAsideStatus] = useState(
-    localStorage.getItem("facit_asideStatus")
-      ? localStorage.getItem("facit_asideStatus") === "true"
+    localStorage.getItem("asideStatus")
+      ? localStorage.getItem("asideStatus") === "true"
       : // @ts-ignore
         deviceScreen?.width >=
           process.env.REACT_APP_ASIDE_MINIMIZE_BREAKPOINT_SIZE
   );
   useLayoutEffect(() => {
-    localStorage.setItem("facit_asideStatus", asideStatus?.toString());
+    localStorage.setItem("asideStatus", asideStatus?.toString());
   }, [asideStatus]);
   const [rightPanel, setRightPanel] = useState(false);
   useLayoutEffect(() => {
@@ -40,7 +40,7 @@ export const ThemeContextProvider = ({ children }) => {
       deviceScreen?.width >=
       process.env.REACT_APP_ASIDE_MINIMIZE_BREAKPOINT_SIZE
     ) {
-      if (localStorage.getItem("facit_asideStatus") === "true")
+      if (localStorage.getItem("asideStatus") === "true")
         setAsideStatus(true);
       setLeftMenuStatus(false);
       setRightMenuStatus(false);
