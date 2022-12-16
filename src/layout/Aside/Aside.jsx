@@ -6,6 +6,7 @@ import Navigation, { NavigationLine } from "../Navigation/Navigation";
 import User from "../User/User";
 import { dashboardMenu, demoPages, layoutMenu } from "../../menu";
 import ThemeContext from "../../contexts/themeContext";
+import { CircleStackIcon, SwatchIcon } from "@heroicons/react/24/solid";
 // import Icon from "../../components/icon/Icon";
 // import Popovers from "../../components/bootstrap/Popovers";
 const Aside = () => {
@@ -39,24 +40,6 @@ const Aside = () => {
               <NavigationLine />
               <Navigation menu={layoutMenu} id="aside-menu" />
               <NavigationLine />
-              <nav>
-                <div className="navigation">
-                  <div className="navigation-item">
-                    <span className="navigation-link navigation-link-pill">
-                      <span className="navigation-link-info">
-                        <span className="navigation-text">
-                          {/* <Popovers */}
-                          {/*   title="Aside.tsx" */}
-                          {/*   desc={<code>src/layout/Aside/Aside.tsx</code>} */}
-                          {/* > */}
-                          {/*   Aside */}
-                          {/* </Popovers> */}
-                        </span>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </nav>
             </>
           )}
 
@@ -75,24 +58,19 @@ const Aside = () => {
               >
                 <span className="navigation-link navigation-link-pill">
                   <span className="navigation-link-info">
-                    {/* <Icon */}
-                    {/*   icon={doc ? "ToggleOn" : "ToggleOff"} */}
-                    {/*   color={doc ? "success" : undefined} */}
-                    {/*   className="navigation-icon" */}
-                    {/* /> */}
-                    <span className="navigation-text">
+                    <SwatchIcon className="navigation-icon" />
+                    <span className="navigation-text w-4 h-4">
                       {t("menu:Documentation")}
                     </span>
                   </span>
                   <span className="navigation-link-extra">
-                    {/* <Icon */}
-                    {/*   icon="Circle" */}
-                    {/*   className={classNames( */}
-                    {/*     "navigation-notification", */}
-                    {/*     "text-success", */}
-                    {/*     "animate__animated animate__heartBeat animate__infinite animate__slower" */}
-                    {/*   )} */}
-                    {/* /> */}
+                    <CircleStackIcon
+                      className={classNames(
+                        "navigation-notification",
+                        "text-success",
+                        "animate__animated animate__heartBeat animate__infinite animate__slower"
+                      )}
+                    />
                   </span>
                 </span>
               </div>
@@ -101,14 +79,6 @@ const Aside = () => {
           <User />
         </div>
       </aside>
-      {/* {asideStatus && hasTouchButton && isModernDesign && (<>
-					<motion.div className='aside-drag-area' ref={constraintsRef}/>
-					<Tooltips title='Toggle Aside' flip={['top', 'right']}>
-						<motion.div className='aside-touch' drag='x' whileDrag={{ scale: 1.2 }} whileHover={{ scale: 1.1 }} dragConstraints={constraintsRef} 
-        // onDrag={(event, info) => console.log(info.point.x, info.point.y)}
-        dragElastic={0.1} style={{ x, zIndex: 1039 }} onClick={() => x.set(x.get() === 0 ? asideWidthWithSpace : 0)}/>
-					</Tooltips>
-				</>)} */}
     </>
   );
 };

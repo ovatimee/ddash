@@ -40,7 +40,7 @@ export const dashboardMenu = {
     id: "dashboard",
     text: "Dashboard",
     path: "/",
-    icon: "Dashboard",
+    icon: "dashboard",
     subMenu: null,
   },
 };
@@ -48,25 +48,25 @@ export const demoPages = {
   auth: {
     id: "auth",
     text: "Auth Pages",
-    icon: "Extension",
+    icon: "menu",
   },
   login: {
     id: "login",
     text: "Login",
     path: "auth-pages/login",
-    icon: "Login",
+    icon: "login",
   },
   signUp: {
     id: "signUp",
-    text: "Sign Up",
+    text: "person_add",
     path: "auth-pages/sign-up",
-    icon: "PersonAdd",
+    icon: "person_add",
   },
   page404: {
     id: "Page404",
     text: "404 Page",
     path: "auth-pages/404",
-    icon: "ReportGmailerrorred",
+    icon: "report",
   },
 };
 export const layoutMenu = {
@@ -84,13 +84,13 @@ export const layoutMenu = {
     id: "pageLayout",
     text: "Page Layout",
     path: "page-layouts",
-    icon: "BackupTable",
+    icon: "backup",
     subMenu: {
       headerAndSubheader: {
         id: "headerAndSubheader",
         text: "Header & Subheader",
         path: "page-layouts/header-and-subheader",
-        icon: "ViewAgenda",
+        icon: "view_agenda",
       },
       onlyHeader: {
         id: "onlyHeader",
@@ -116,19 +116,19 @@ export const layoutMenu = {
     id: "asideTypes",
     text: "Aside Types",
     path: "aside-types",
-    icon: "Vertical Split",
+    icon: "vertical_split",
     subMenu: {
       defaultAside: {
         id: "defaultAside",
         text: "Default Aside",
         path: "aside-types/default-aside",
-        icon: "ViewQuilt",
+        icon: "view_quilt",
       },
       minimizeAside: {
         id: "minimizeAside",
         text: "Minimize Aside",
         path: "aside-types/minimize-aside",
-        icon: "View Compact",
+        icon: "view_compact",
       },
     },
   },

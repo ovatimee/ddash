@@ -10,7 +10,7 @@ import Portal from "../layout/Portal/Portal";
 import { demoPages, layoutMenu } from "../menu";
 import useDarkMode from "../hooks/useDarkMode";
 import COLORS from "../common/data/enumColors";
-// import steps, { styles } from "../steps";
+
 const App = () => {
   // getOS();
   /**
@@ -63,28 +63,26 @@ const App = () => {
   ];
   return (
     <ThemeProvider theme={theme}>
-          <div
-            ref={ref}
-            className="app"
-            style={{
-              backgroundColor: fullScreenStatus
-                ? "var(--bs-body-bg)"
-                : undefined,
-              zIndex: fullScreenStatus ? 1 : undefined,
-              overflow: fullScreenStatus ? "scroll" : undefined,
-            }}
-          >
-            <Routes>
-              {withOutAsidePages.map((path) => (
-                <Route key={path} path={path} />
-              ))}
-              <Route path="*" element={<Aside />} />
-            </Routes>
-            <Wrapper />
-          </div>
-          <Portal id="portal-notification">
-            <ReactNotifications />
-          </Portal>
+      <div
+        ref={ref}
+        className="app"
+        style={{
+          backgroundColor: fullScreenStatus ? "var(--bs-body-bg)" : undefined,
+          zIndex: fullScreenStatus ? 1 : undefined,
+          overflow: fullScreenStatus ? "scroll" : undefined,
+        }}
+      >
+        <Routes>
+          {withOutAsidePages.map((path) => (
+            <Route key={path} path={path} />
+          ))}
+          <Route path="*" element={<Aside />} />
+        </Routes>
+        <Wrapper />
+      </div>
+      <Portal id="portal-notification">
+        <ReactNotifications />
+      </Portal>
     </ThemeProvider>
   );
 };

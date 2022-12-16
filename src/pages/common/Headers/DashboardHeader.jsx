@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Header, { HeaderLeft, HeaderRight } from "../../../layout/Header/Header";
-import { Popover } from "bootstrap";
+// import { Popover } from "bootstrap";
 // import Button from "../../../components/bootstrap/Button";
 import useDarkMode from "../../../hooks/useDarkMode";
 import LANG, { getLangWithKey } from "../../../lang";
@@ -11,6 +11,13 @@ import LANG, { getLangWithKey } from "../../../lang";
 //   DropdownToggle,
 // } from "../../../components/bootstrap/Dropdown";
 import showNotification from "../../../components/extras/showNotification";
+import {
+  ArrowLeftIcon,
+  LightBulbIcon,
+  MoonIcon,
+  SunIcon,
+} from "@heroicons/react/24/solid";
+import MaterialIconsReact from "material-icons-react";
 // import Icon from "../../../components/icon/Icon";
 // import Spinner from "../../../components/bootstrap/Spinner";
 
@@ -46,8 +53,10 @@ const DashboardHeader = () => {
         {/* <Popovers title='DashboardHeader.tsx' desc={<code>src/pages/common/Headers/DashboardHeader.tsx</code>}> */}
         {/* 	HeaderLeft */}
         {/* </Popovers> */}
-        {/* <code>DashboardHeader.tsx</code> */}
-        <div>
+        <code>DashboardHeader.tsx</code>
+        <div className="">
+          {/* <FontAwesomeIcon icon={["fab","circle"]} color="#ddd" size="lg" className="h-4 w-4 text-red-500 bg-red-200" listItem /> */}
+
           <input
             type="text"
             name="search-bar"
@@ -71,14 +80,19 @@ const DashboardHeader = () => {
           {/* Dark Mode */}
           <div className="col-auto">
             {/* <Popover trigger="hover" desc="Dark / Light mode"> */}
-            {/*   <Button */}
-            {/*     // eslint-disable-next-line react/jsx-props-no-spreading */}
-            {/*     {...styledBtn} */}
-            {/*     icon={darkModeStatus ? "DarkMode" : "LightMode"} */}
-            {/*     onClick={() => setDarkModeStatus(!darkModeStatus)} */}
-            {/*     aria-label="Toggle fullscreen" */}
-            {/*     data-tour="dark-mode" */}
-            {/*   /> */}
+            <button
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...styledBtn}
+              onClick={() => setDarkModeStatus(!darkModeStatus)}
+              aria-label="Toggle fullscreen"
+              data-tour="dark-mode"
+            >
+              {darkModeStatus ? (
+                <MoonIcon className="h-7 w-7" />
+              ) : (
+                <SunIcon className="h-7 w-7" />
+              )}
+            </button>
             {/* </Popover> */}
           </div>
           {/* Lang Selector */}
