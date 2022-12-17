@@ -2,68 +2,68 @@
           <div className="col-xl-4 col-lg-6 col-md-8 shadow-3d-container">
             <div className="shadow-3d-dark" data-tour="login-page">
               <divBody>
-                {/* <div className="text-center my-5"> */}
-                {/*   <Link */}
-                {/*     to="/" */}
-                {/*     className={classNames( */}
-                {/*       "text-decoration-none  fw-bold display-2", */}
-                {/*       { */}
-                {/*         "text-dark": !darkModeStatus, */}
-                {/*         "text-light": darkModeStatus, */}
-                {/*       } */}
-                {/*     )} */}
-                {/*   > */}
-                {/*     <Logo width={200} /> */}
-                {/*   </Link> */}
-                {/* </div> */}
-                {/* <div */}
-                {/*   className={classNames("rounded-3", { */}
-                {/*     "bg-l10-dark": !darkModeStatus, */}
-                {/*     "bg-dark": darkModeStatus, */}
-                {/*   })} */}
-                {/* > */}
-                {/*   <div className="row row-cols-2 g-3 pb-3 px-3 mt-0"> */}
-                {/*     <div className="col"> */}
-                {/*       <button */}
-                {/*         color={darkModeStatus ? "light" : "dark"} */}
-                {/*         isLight={singUpStatus} */}
-                {/*         className="rounded-1 w-100" */}
-                {/*         size="lg" */}
-                {/*         onClick={() => { */}
-                {/*           setSignInPassword(false); */}
-                {/*           setSingUpStatus(!singUpStatus); */}
-                {/*         }} */}
-                {/*       > */}
-                {/*         Login */}
-                {/*       </button> */}
-                {/*     </div> */}
-                {/*     <div className="col"> */}
-                {/*       <button */}
-                {/*         color={darkModeStatus ? "light" : "dark"} */}
-                {/*         isLight={!singUpStatus} */}
-                {/*         className="rounded-1 w-100" */}
-                {/*         size="lg" */}
-                {/*         onClick={() => { */}
-                {/*           setSignInPassword(false); */}
-                {/*           setSingUpStatus(!singUpStatus); */}
-                {/*         }} */}
-                {/*       > */}
-                {/*         Sign Up */}
-                {/*       </button> */}
-                {/*     </div> */}
-                {/*   </div> */}
-                {/* </div> */}
+                <div className="text-center my-5">
+                  <Link
+                    to="/"
+                    className={classNames(
+                      "text-decoration-none  fw-bold display-2",
+                      {
+                        "text-dark": !darkModeStatus,
+                        "text-light": darkModeStatus,
+                      }
+                    )}
+                  >
+                    <Logo width={200} />
+                  </Link>
+                </div>
+                <div
+                  className={classNames("rounded-3", {
+                    "bg-l10-dark": !darkModeStatus,
+                    "bg-dark": darkModeStatus,
+                  })}
+                >
+                  <div className="row row-cols-2 g-3 pb-3 px-3 mt-0">
+                    <div className="col">
+                      <button
+                        color={darkModeStatus ? "light" : "dark"}
+                        isLight={singUpStatus}
+                        className="rounded-1 w-100"
+                        size="lg"
+                        onClick={() => {
+                          setSignInPassword(false);
+                          setSingUpStatus(!singUpStatus);
+                        }}
+                      >
+                        Login
+                      </button>
+                    </div>
+                    <div className="col">
+                      <button
+                        color={darkModeStatus ? "light" : "dark"}
+                        isLight={!singUpStatus}
+                        className="rounded-1 w-100"
+                        size="lg"
+                        onClick={() => {
+                          setSignInPassword(false);
+                          setSingUpStatus(!singUpStatus);
+                        }}
+                      >
+                        Sign Up
+                      </button>
+                    </div>
+                  </div>
+                </div>
                 <LoginHeader isNewUser={singUpStatus} />
-                {/* <Alert isLight icon="Lock" isDismissible> */}
-                {/* <div className="row"> */}
-                {/*   <div className="col-12"> */}
-                {/*     <strong>Username:</strong> {USERS.JOHN.username} */}
-                {/*   </div> */}
-                {/*   <div className="col-12"> */}
-                {/*     <strong>Password:</strong> {USERS.JOHN.password} */}
-                {/*   </div> */}
-                {/* </div> */}
-                {/* </Alert> */}
+                <Alert isLight icon="Lock" isDismissible>
+                <div className="row">
+                  <div className="col-12">
+                    <strong>Username:</strong> {USERS.JOHN.username}
+                  </div>
+                  <div className="col-12">
+                    <strong>Password:</strong> {USERS.JOHN.password}
+                  </div>
+                </div>
+                </Alert>
                 <form className="row g-4">
                   {singUpStatus ? (
                     <>
