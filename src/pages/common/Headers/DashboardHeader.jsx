@@ -14,6 +14,7 @@ import showNotification from "../../../components/extras/showNotification";
 import {
   ArrowLeftIcon,
   LightBulbIcon,
+  MagnifyingGlassIcon,
   MoonIcon,
   SunIcon,
 } from "@heroicons/react/24/solid";
@@ -53,15 +54,19 @@ const DashboardHeader = () => {
         {/* <Popovers title='DashboardHeader.tsx' desc={<code>src/pages/common/Headers/DashboardHeader.tsx</code>}> */}
         {/* 	HeaderLeft */}
         {/* </Popovers> */}
-        <code>DashboardHeader.tsx</code>
-        <div className="">
+        {/* <code>DashboardHeader.tsx</code> */}
+        <div className="w-96 relative">
           {/* <FontAwesomeIcon icon={["fab","circle"]} color="#ddd" size="lg" className="h-4 w-4 text-red-500 bg-red-200" listItem /> */}
+          <span className="absolute left-2 top-2">
+
+            <MagnifyingGlassIcon className="w-6 h-6" />
+          </span>
 
           <input
             type="text"
             name="search-bar"
             placeholder="Search"
-            className="bg-slate-200 py-2.5 px-4 rounded-md"
+            className="bg-slate-100 w-full py-2.5 px-5 rounded-lg"
           />
         </div>
       </HeaderLeft>
@@ -82,8 +87,8 @@ const DashboardHeader = () => {
             {/* <Popover trigger="hover" desc="Dark / Light mode"> */}
             <button
               // eslint-disable-next-line react/jsx-props-no-spreading
-              {...styledBtn}
               onClick={() => setDarkModeStatus(!darkModeStatus)}
+              {...styledBtn}
               aria-label="Toggle fullscreen"
               data-tour="dark-mode"
             >

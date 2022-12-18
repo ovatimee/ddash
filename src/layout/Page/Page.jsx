@@ -6,8 +6,8 @@ const Page = forwardRef(({ children, className, container, ...props }, ref) => {
     <div
       ref={ref}
       className={classNames("page", className, {
-        [`container${typeof container === "string" ? `-${container}` : ""}`]:
-          container,
+        // [`container${typeof container === "string" ? `-${container}` : ""}`]:
+          // container,
       })}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
