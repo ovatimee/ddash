@@ -13,13 +13,12 @@ import ResizableBox from "../../components/ResizableBox";
 
 const DashboardPage = () => {
   const users = useFetch("https://randomuser.me/api/?results=5");
-  if (users.data === "undefined") {
-    users.reFetch();
-  }
-  const data = users.data;
+  // if (users.data === "undefined") {
+  //   users.reFetch();
+  // }
   return (
     <PageWrapper title="Dashboard Page">
-      <Page>
+      <Page className="px-4">
         <PageTitle>Dashboard</PageTitle>
         <BreadCrumb />
         <div className=" my-3">
@@ -60,38 +59,42 @@ const DashboardPage = () => {
               />
             </InfoCard>
           </div>
-          <div className="flex flex-col lg:flex-row">
-            <div className="w-full">
+          <div className="flex flex-col lg:flex-row lg:space-x-8">
+            <div className="w-full h-96 lg:h-auto shadow-md relative">
               <Line />
             </div>
-            <div>
-              <div className="flex justify-between">
+            <div className="w-full lg:w-2/6 shadow-md p-4">
+              <div className="flex justify-between py-3">
                 <h3>Best Sellers</h3>
                 <EllipsisVerticalIcon className="w-6 h-6" />
               </div>
               <hr />
-              <div className="py-4 w-96">
-                {data.results.map((user) => (
-                  <div className="flex items-center justify-between pb-3">
-                    <div className="flex">
-                      <div className="pr-5">
-                        <img
-                          src={user.picture.thumbnail}
-                          alt="user-profile"
-                          className="rounded-2xl"
-                        />
+              <div className="pt-4 flex flex-col space-y-3">
+                {users.data.results? (
+                  users.data.results.map((user) => (
+                    <div className="flex items-center justify-between">
+                      <div className="flex">
+                        <div className="pr-5">
+                          <img
+                            src={user.picture.thumbnail}
+                            alt="user-profile"
+                            className="rounded-2xl"
+                          />
+                        </div>
+                        <div className="flex flex-col justify-between">
+                          <h3>{`${user.name.first} ${user.name.last}`}</h3>
+                          <p>{user.gender}</p>
+                        </div>
                       </div>
                       <div className="flex flex-col justify-between">
-                        <h3>{`${user.name.first} ${user.name.last}`}</h3>
-                        <p>{user.gender}</p>
+                        <h3>{user.phone.split("-")[1]}</h3>
+                        <p>120</p>
                       </div>
                     </div>
-                    <div className="flex flex-col justify-between">
-                      <h3>{user.phone.split("-")[1]}</h3>
-                      <p>120</p>
-                    </div>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <div>Loading...</div>
+                )}
               </div>
             </div>
           </div>

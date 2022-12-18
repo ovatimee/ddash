@@ -26,8 +26,8 @@ const DashboardHeader = () => {
   const { darkModeStatus, setDarkModeStatus } = useDarkMode();
   const styledBtn = {
     color: darkModeStatus ? "dark" : "light",
-    hoverShadow: "default",
-    isLight: !darkModeStatus,
+    // hoverShadow: "default",
+    // isLight: !darkModeStatus,
     size: "lg",
   };
   const { i18n } = useTranslation();
